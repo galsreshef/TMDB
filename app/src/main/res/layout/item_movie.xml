@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.example.tmdb.data.Movie" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvMovie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="110dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvMovieName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:maxEms="15"
+                    android:maxLines="1"
+                    android:paddingStart="10dp"
+                    android:paddingTop="8dp"
+                    android:paddingEnd="10dp"
+                    android:text="@{item.title}"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/tvMovieReleaseDate"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="xxx" />
+
+                <TextView
+                    android:id="@+id/tvMovieReleaseDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:maxEms="15"
+                    android:maxLines="1"
+                    android:paddingTop="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingStart="8dp"
+                    android:text="@{item.releaseDate}"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/tvMovieName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="XXXX-XX-XX" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/genreList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvMovieName"
+                    tools:itemCount="30"
+                    tools:listitem="@layout/item_genre">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

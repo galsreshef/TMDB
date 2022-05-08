@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TMDB</string>
+    <string name="tikal_apps_logo">Tikal logo</string>
+    <string name="version">Version %s</string>
+    <string name="created_by_gal_reshef">Created by the Gal Reshef</string>
+    <string name="tikal_movie_db">Tikal movie DB</string>
+</resources>
